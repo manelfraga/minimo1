@@ -45,7 +45,7 @@ public class VideoService {
             //Codigos de respuesta
             @ApiResponse(code = 201, message = "Successful", response = Video.class, responseContainer="List"),
     })
-    @Path("/")
+    @Path("/findall")
     @Produces(MediaType.APPLICATION_JSON) //Tipo de fichero devuelto
     //Respuesta
     public Response getVideos() {
@@ -98,7 +98,7 @@ public class VideoService {
             @ApiResponse(code = 201, message = "Successful"),
             @ApiResponse(code = 404, message = "Video not found")
     })
-    @Path("/")
+    @Path("/findall")
     public Response updateVideo(Video video) {
 
         Video v = this.vm.updateVideo(video);
@@ -118,7 +118,7 @@ public class VideoService {
 
     })
 
-    @Path("/")
+    @Path("/findall")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response newVideo(Video video) {
 
